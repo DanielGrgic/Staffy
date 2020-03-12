@@ -27,7 +27,7 @@ const RightText = styled.p`
 const TopBar = () => {
   return (
     <Container>
-      <img src={logoSvg} />
+      <img src={logoSvg} alt="Log Image"/>
       <RightText>by Staffy</RightText>
     </Container>
   )
