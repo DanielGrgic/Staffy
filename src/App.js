@@ -6,6 +6,7 @@ import './App.css';
 
 import TopBar from "./components/TopBar";
 import LeftSideBar from './components/LeftSideBar';
+import RightSection from './components/RightSection';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <TopBar />
       <MainContent>
         <LeftSideBar />
+        <RightSection />
       </MainContent>
     </div>
   );
