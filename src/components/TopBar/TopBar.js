@@ -3,6 +3,15 @@ import styled from 'styled-components';
 
 import logoSvg from '../../logo.svg';
 
+const TopBar = () => {
+  return (
+    <Container>
+      <img src={logoSvg} alt="Log Image"/>
+      <RightText>by Staffy</RightText>
+    </Container>
+  )
+}
+
 const Container = styled.div`
   display: flex;
   background: #F4F6F8;
@@ -23,14 +32,5 @@ const RightText = styled.p`
   line-height: 20px;
   color: #637381;
 `
-
-const TopBar = () => {
-  return (
-    <Container>
-      <img src={logoSvg} alt="Log Image"/>
-      <RightText>by Staffy</RightText>
-    </Container>
-  )
-}
 
 export default TopBar;

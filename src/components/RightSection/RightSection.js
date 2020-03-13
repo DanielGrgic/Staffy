@@ -1,6 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import StepSection from './StepSection';
+
+const RightSection = () => {
+  
+  return (
+    <Container>
+      <Content>
+        <BackDivContainer>       
+          <BackBtn>
+            <span>{"<"}&nbsp;&nbsp;</span>
+            BACK
+          </BackBtn>
+          <StepSection step={1} />
+        </BackDivContainer>
+      </Content>
+    </Container>
+  )
+}
+
 const Container = styled.div`
   display: flex;  
   flex-direction: column;
@@ -35,21 +54,5 @@ const BackBtn = styled.div`
     color: #F34867;  
   }
 `
-
-const RightSection = () => {
-  
-  return (
-    <Container>
-      <Content>
-        <BackDivContainer>       
-            <BackBtn>
-              <span>{"<"}&nbsp;&nbsp;</span>
-              BACK
-            </BackBtn>
-        </BackDivContainer>
-      </Content>
-    </Container>
-  )
-}
 
 export default RightSection;

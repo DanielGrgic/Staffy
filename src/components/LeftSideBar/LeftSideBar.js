@@ -4,6 +4,51 @@ import Carousel from 'react-bootstrap/Carousel'
 
 import backImg from './back.png';
 
+const LeftSideBar = () => {
+
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(null);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+    setDirection(e.direction);
+  }
+
+  return (
+    <Container>
+      <StyledCarousel 
+        activeIndex={index} 
+        direction={direction} 
+        onSelect={handleSelect}
+        controls={false}
+      >
+        <Carousel.Item>
+          <ItemContent>
+            <CorouselDescription>
+              “While running my small Shopify business I never had time to check up on what my staff was doing. But with Staffy, I can easily monitor and see their progress.” <br /><br />Tom, Qstomize
+            </CorouselDescription>          
+          </ItemContent>          
+        </Carousel.Item>
+        <Carousel.Item>
+          <ItemContent>
+            <CorouselDescription>
+              “While running my small Shopify business I never had time to check up on what my staff was doing. But with Staffy, I can easily monitor and see their progress.” <br /><br />Tom, Qstomize
+            </CorouselDescription>          
+          </ItemContent>
+        </Carousel.Item>
+        <Carousel.Item>
+          <ItemContent>
+            <CorouselDescription>
+              “While running my small Shopify business I never had time to check up on what my staff was doing. But with Staffy, I can easily monitor and see their progress.” <br /><br />Tom, Qstomize
+            </CorouselDescription>          
+          </ItemContent>
+        </Carousel.Item>
+      </StyledCarousel>
+    </Container>
+  )
+}
+
+
 const Container = styled.div`
   display: flex;
   width: 363px;
@@ -51,49 +96,5 @@ const ItemContent = styled.div`
   flex-direction: column;
   justify-content: flex-end;  
 `
-
-const LeftSideBar = () => {
-
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-    setDirection(e.direction);
-  }
-
-  return (
-    <Container>
-      <StyledCarousel 
-        activeIndex={index} 
-        direction={direction} 
-        onSelect={handleSelect}
-        controls={false}
-      >
-        <Carousel.Item>
-          <ItemContent>
-            <CorouselDescription>
-              “While running my small Shopify business I never had time to check up on what my staff was doing. But with Staffy, I can easily monitor and see their progress.” <br /><br />Tom, Qstomize
-            </CorouselDescription>          
-          </ItemContent>          
-        </Carousel.Item>
-        <Carousel.Item>
-          <ItemContent>
-            <CorouselDescription>
-              “While running my small Shopify business I never had time to check up on what my staff was doing. But with Staffy, I can easily monitor and see their progress.” <br /><br />Tom, Qstomize
-            </CorouselDescription>          
-          </ItemContent>
-        </Carousel.Item>
-        <Carousel.Item>
-          <ItemContent>
-            <CorouselDescription>
-              “While running my small Shopify business I never had time to check up on what my staff was doing. But with Staffy, I can easily monitor and see their progress.” <br /><br />Tom, Qstomize
-            </CorouselDescription>          
-          </ItemContent>
-        </Carousel.Item>
-      </StyledCarousel>
-    </Container>
-  )
-}
 
 export default LeftSideBar;
