@@ -8,7 +8,10 @@ import { SELECT_OPTIONS } from '../../constants';
 
 const StepSection = ({
   step,
+  changeStep
 }) => {
+
+  const [stepValues, setStepValues] = useState([[],{},{},{}]);
 
   const getTitle = (step=1) => {
     switch(step) {
@@ -21,6 +24,14 @@ const StepSection = ({
         return 'Let’s get to know you and your Shopify store a bit:';
     }
   }  
+
+  const handleChangeStepValue = (selectedOption, nIndex) => {
+    if (nIndex === step-1)
+      changeStep(step + 1)    
+    const temp = stepValues;
+    temp[nIndex] = selectedOption;
+    setStepValues([...temp])
+  }
 
   return (
     <Container>
@@ -43,6 +54,8 @@ const StepSection = ({
                 placeholder="Choose Multiple"
                 options={SELECT_OPTIONS}
                 isMulti={true}
+                value={stepValues[0]}
+                onChange={selectedOption => {handleChangeStepValue(selectedOption, 0)}}
               />              
             </Form.Group>                      
           )
@@ -54,6 +67,8 @@ const StepSection = ({
               <StepSelect
                 placeholder="Choose One"
                 options={SELECT_OPTIONS}
+                value={stepValues[1]}
+                onChange={selectedOption => {handleChangeStepValue(selectedOption, 1)}}
               />              
             </Form.Group>
           )
@@ -65,6 +80,8 @@ const StepSection = ({
               <StepSelect
                 placeholder="Choose One"
                 options={SELECT_OPTIONS}
+                value={stepValues[2]}
+                onChange={selectedOption => {handleChangeStepValue(selectedOption, 2)}}
               />              
             </Form.Group>            
           )
@@ -76,8 +93,15 @@ const StepSection = ({
               <StepSelect
                 placeholder="Choose One"
                 options={SELECT_OPTIONS}
+                value={stepValues[4]}
+                onChange={selectedOption => {handleChangeStepValue(selectedOption, 3)}}
               />              
             </Form.Group>            
+          )
+        }
+        {
+          step === 5 && (
+            <NextBtn onClick={() => {changeStep(6)}}>Next</NextBtn>
           )
         }
       </Form>

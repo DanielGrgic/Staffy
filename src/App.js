@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import styled from 'styled-components';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,12 +9,14 @@ import LeftSideBar from './components/LeftSideBar';
 import RightSection from './components/RightSection';
 
 function App() {
+  const [step, setStep] = useState(1);
+
   return (
     <div className="App">
       <TopBar />
       <MainContent>
         <LeftSideBar />
-        <RightSection />
+        <RightSection step={step} changeStep={stepValue=>{ console.log(stepValue); setStep(stepValue)}} />
       </MainContent>
     </div>
   );

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import StepSection from './StepSection';
 
-const RightSection = () => {
+const RightSection = ({step, changeStep}) => {
   
   return (
     <Container>
@@ -12,8 +12,8 @@ const RightSection = () => {
           <BackBtn>
             <span>{"<"}&nbsp;&nbsp;</span>
             BACK
-          </BackBtn>
-          <StepSection step={1} />
+          </BackBtn>          
+          <StepSection step={step} changeStep={stepValue => {changeStep(stepValue)}} />
         </BackDivContainer>
       </Content>
     </Container>
